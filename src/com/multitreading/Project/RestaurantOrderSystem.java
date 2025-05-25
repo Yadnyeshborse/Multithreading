@@ -159,3 +159,49 @@ public class RestaurantOrderSystem {
                 ));
     }
 }
+
+
+//
+//Problem Statement
+//Create a multithreaded restaurant system that:
+//
+//Handles multiple waiters taking orders concurrently
+//
+//Processes orders based on priority (VIP > Regular)
+//
+//Tracks order status in real-time
+//
+//Handles cooking failures gracefully
+//
+//Provides a final order status report
+//
+//Shuts down cleanly after all orders are processed
+//
+//Key Challenges:
+//
+//Thread-safe order prioritization
+//
+//Coordinating multiple producers/consumers
+//
+//Preventing race conditions in status updates
+//
+//Graceful system termination
+
+
+//Code Description
+//1. Core Components
+//Component	Purpose
+//Order Class	Represents an order with ID, customer, priority, and status
+//Waiter Threads	Multiple producers adding orders to queue
+//Chef Threads	Multiple consumers processing orders from queue
+//PriorityBlockingQueue	Thread-safe priority queue for orders
+//ConcurrentHashMap	Thread-safe order tracking system
+//POISON_PILL	Special order to signal system shutdown
+//2. Key Features
+//Feature	Implementation
+//Priority Handling	Order implements Comparable for priority-based queue ordering
+//Error Handling	20% random failure rate with status updates
+//Order Tracking	Atomic order IDs + ConcurrentHashMap for real-time status
+//Graceful Shutdown	CountDownLatch for waiters + poison pill for chefs
+//Thread Management	ExecutorService pool for chefs + manual thread creation for waiters
+

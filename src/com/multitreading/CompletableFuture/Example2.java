@@ -13,7 +13,7 @@ public class Example2 {
         CompletableFuture.allOf(task1, task2, task3)
                 .thenRun(() -> {
                     String combined = Stream.of(task1, task2, task3)
-                            .map(CompletableFuture::join) // Join to get the actual values
+                            .map(stringCompletableFuture -> stringCompletableFuture.join()) // Join to get the actual values
                             .collect(Collectors.joining(", "));
 
                     System.out.println("All results: " + combined);
