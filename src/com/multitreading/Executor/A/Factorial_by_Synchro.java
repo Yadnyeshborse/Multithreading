@@ -2,7 +2,7 @@ package com.multitreading.Executor.A;
 
 public class Factorial_by_Synchro {
     public static void main(String[] args) {
-        long startTime=System.currentTimeMillis();// 1 jan to 1970 to current time milli sec
+        long startTime=System.currentTimeMillis(); // 1 jan to 1970 to current time milli sec
         for (int i=1;i<10;i++){
             System.out.println(factorial(i));
         }
