@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Even_odd_no_by_two_thread_normalway_part3 {
+public class Even_odd_no_by_two_thread_normal_way_part3 {
     public static void main(String[] args) {
         AtomicInteger number = new AtomicInteger(1);
         int max = 10;

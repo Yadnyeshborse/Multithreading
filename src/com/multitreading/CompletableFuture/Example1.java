@@ -7,6 +7,6 @@ public class Example1 {
         CompletableFuture.supplyAsync(() -> 10)
                 .thenApply(x -> x * 2)               // Sync transformation
                 .thenApplyAsync(x -> x + 5)          // Async transformation
-                .thenAccept(System.out::println);    // Prints "25"
+                .thenAccept(x1 -> System.out.println(x1));    // Prints "25"
     }
 }
